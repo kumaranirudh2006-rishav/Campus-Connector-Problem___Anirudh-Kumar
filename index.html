@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lost & Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style2.css">
+  <script src="claim.js"></script>
+  <script src="Notify.js"></script>
+   
+
+
+</head>
+<body>
+  <div class="container">
+    <!-- Reporting Form -->
+    <h1>Report Lost or Found Item</h1>
+    <form id="reportForm">
+      <label>Type:
+        <select name="type" required>
+          <option value="lost">Lost</option>
+          <option value="found">Found</option>
+        </select>
+      </label>
+
+      <label>Title:
+        <input type="text" name="title" required>
+      </label>
+
+      <label>Category:
+        <select name="category" required>
+          <option>Wallet</option>
+          <option>Phone</option>
+          <option>Documents</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label>Location:
+        <input type="text" name="location" required>
+      </label>
+
+      <label>Date:
+        <input type="date" name="date" required>
+      </label>
+
+      <label>Description:
+        <textarea name="description" required></textarea>
+      </label>
+
+      <label>Photo:
+        <input type="file" name="photo" accept="image/*">
+      </label>
+
+      <label>Contact (phone/email):
+        <input type="text" name="contact" required>
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
+    <div id="output"></div>
+  </div>
+   <div class="container">
+    <!-- Search & Filter -->
+    <h1>Search Lost & Found Items</h1>
+    <div class="filters">
+      <select id="searchCategory">
+        <option value="">All Categories</option>
+        <option>Wallet</option>
+        <option>Phone</option>
+        <option>Documents</option>
+        <option>Pets</option>
+        <option>Keys</option>
+      </select>
+
+      <input type="text" id="searchLocation" placeholder="Location">
+      <input type="text" id="searchKeyword" placeholder="Keyword">
+      <button id="searchBtn">Search</button>
+    </div>
+   
+    <div class="container">
+  <h1>Notifications</h1>
+  <div id="notifications"></div>
+  <script src="notify.js"></script>
+</div>
+
+
+  <div class="container">
+    <h1>Notifications</h1>
+    <div id="notifications"></div>
+
+  </div>
+
+  <!-- Link to external JS file -->
+  <script src="notify.js"></script>
+  
+
+  <div class="container">
+    <h1>Lost & Found Claim Process</h1>
+
+    <!-- Identity Verification -->
+    <section>
+      <h2>1. Identity Verification</h2>
+      <form id="loginForm">
+        <label>Email: <input type="email" id="email" required></label>
+        <label>Password: <input type="password" id="password" required></label>
+        <button type="submit">Login</button>
+      </form>
+      <div id="loginStatus"></div>
+    </section>
+
+    <!-- Ownership Validation -->
+    <section>
+      <h2>2. Ownership Validation</h2>
+      <form id="claimForm">
+        <label>Report ID: <input type="text" id="reportId" required></label>
+        <label>Ownership Evidence: <input type="text" id="evidence" required></label>
+        <button type="submit">Submit Claim</button>
+      </form>
+      <div id="claimStatus"></div>
+    </section>
+
+    <!-- Two-Step Approval -->
+    <section>
+      <h2>3. Two-Step Approval</h2>
+      <button id="ownerValidateBtn">Owner Validate</button>
+      <button id="modApproveBtn">Moderator Approve</button>
+      <button id="finalApproveBtn">Final Approve</button>
+      <button id="rejectBtn">Reject Claim</button>
+      <div id="approvalStatus"></div>
+    </section>
+
+    <!-- Audit Trail -->
+    <section>
+      <h2>4. Audit Trail</h2>
+      <div id="auditTrail"></div>
+    </section>
+  </div>
+
+  <script src="claim.js"></script>
+
+ 
+
+ <h2>Notifications</h2>
+<div id="notifications"></div>
+
+<form id="reportForm">
+  <select id="type">
+    <option value="Lost">Lost</option>
+    <option value="Found">Found</option>
+  </select>
+  <input type="text" id="title" placeholder="Item title">
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
